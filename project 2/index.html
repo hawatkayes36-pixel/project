@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدونة</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    .blog-card { transition: 0.3s; cursor: pointer; }
+    .blog-card:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+</style>
+</head>
+<body>
+<nav class="navbar navbar-light bg-light shadow-sm"><div class="container"><a class="navbar-brand fw-bold" href="#"><i class="fas fa-blog me-2"></i>مدونتي</a><a href="index.html" class="btn btn-outline-primary btn-sm">الرئيسية</a></div></nav>
+<main class="container my-4">
+    <h2 class="mb-4">آخر المقالات</h2>
+    <div class="row g-4">
+    <div class="col-md-4"><div class="card blog-card h-100"><div class="card-body"><h5>أساسيات HTML5</h5><p class="text-muted small">10 يناير 2026</p><p>مقدمة سريعة حول هيكلة المحتوى باستخدام HTML5.</p><button class="btn btn-primary btn-sm read-more" data-title="أساسيات HTML5">قراءة المزيد</button></div></div></div>
+    <div class="col-md-4"><div class="card blog-card h-100"><div class="card-body"><h5>تصميم متجاوب مع Bootstrap</h5><p class="text-muted small">15 يناير 2026</p><p>كيفية استخدام شبكة Bootstrap لتصميم مواقع متجاوبة.</p><button class="btn btn-primary btn-sm read-more" data-title="تصميم متجاوب مع Bootstrap">قراءة المزيد</button></div></div></div>
+    <div class="col-md-4"><div class="card blog-card h-100"><div class="card-body"><h5>تفاعلات JavaScript للمبتدئين</h5><p class="text-muted small">20 يناير 2026</p><p>تعلم أساسيات DOM Manipulation والأحداث.</p><button class="btn btn-primary btn-sm read-more" data-title="تفاعلات JavaScript للمبتدئين">قراءة المزيد</button></div></div></div>
+    <div class="col-md-4"><div class="card blog-card h-100"><div class="card-body"><h5>أفضل ممارسات CSS3</h5><p class="text-muted small">25 يناير 2026</p><p>نصائح لكتابة CSS نظيف وقابل للصيانة.</p><button class="btn btn-primary btn-sm read-more" data-title="أفضل ممارسات CSS3">قراءة المزيد</button></div></div></div>
+    </div>
+    <div id="messageAlert" class="mt-4"></div>
+</main>
+<footer class="text-center py-3 bg-light"><div class="container">© 2026 مدونتي</div></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.querySelectorAll('.read-more').forEach(btn => {
+    btn.addEventListener('click', function() {
+        const title = this.getAttribute('data-title');
+        document.getElementById('messageAlert').innerHTML = `<div class="alert alert-info"><i class="fas fa-info-circle"></i> تم النقر على "قراءة المزيد" للمقال: <strong>${title}</strong></div>`;
+        setTimeout(() => { document.getElementById('messageAlert').innerHTML = ''; }, 4000);
+    });
+    });
+</script>
+</body>
+</html>
